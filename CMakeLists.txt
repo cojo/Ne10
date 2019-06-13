@@ -30,10 +30,10 @@ project(NE10 C CXX ASM)
 
 option(NE10_BUILD_SHARED "Build NE10 shared libraries" OFF)
 option(NE10_BUILD_STATIC "Build NE10 static libraries" ON)
-option(NE10_BUILD_EXAMPLES "Build NE10 examples" ON)
+option(NE10_BUILD_EXAMPLES "Build NE10 examples" OFF)
 
 #hard float abi
-option(NE10_ARM_HARD_FLOAT "Build NE10 for hard float abi" ON)
+option(NE10_ARM_HARD_FLOAT "Build NE10 for hard float abi" OFF)
 
 #unit test options
 option(NE10_BUILD_UNIT_TEST "Build NE10 unit test" OFF)
@@ -90,7 +90,7 @@ if("${NE10_TARGET_ARCH}" STREQUAL "armv7")
     option(NE10_ENABLE_PHYSICS "Build physics functionalities to NE10" ON)
 endif()
 option(NE10_ENABLE_DSP "Build dsp functionalities to NE10" ON)
-option(NE10_ENABLE_IMGPROC "Build image processing functionalities to NE10" ON)
+option(NE10_ENABLE_IMGPROC "Build image processing functionalities to NE10" OFF)
 
 set(NE10_VERSION 10)
 
@@ -130,7 +130,7 @@ if(ANDROID_PLATFORM)
             set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,--no-warn-mismatch")
         endif()
         # Turn on asm optimization for Android on ARM v7.
-        set(NE10_ASM_OPTIMIZATION on)
+        set(NE10_ASM_OPTIMIZATION off)
     endif()
     message("-- Loaded toolchain:
     ${CMAKE_C_COMPILER}
