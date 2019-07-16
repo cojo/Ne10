@@ -30,7 +30,7 @@ project(NE10 C CXX ASM)
 
 option(NE10_BUILD_SHARED "Build NE10 shared libraries" OFF)
 option(NE10_BUILD_STATIC "Build NE10 static libraries" ON)
-option(NE10_BUILD_EXAMPLES "Build NE10 examples" ON)
+option(NE10_BUILD_EXAMPLES "Build NE10 examples" OFF)
 
 #hard float abi
 option(NE10_ARM_HARD_FLOAT "Build NE10 for hard float abi" ON)
@@ -105,7 +105,7 @@ message("-- Loaded toolchain:
     ${CMAKE_C_FLAGS}")
 
 if(ANDROID_PLATFORM)
-    option(ANDROID_DEMO "Build Android Demo" ON)
+    option(ANDROID_DEMO "Build Android Demo" OFF)
 
     if("${NE10_TARGET_ARCH}" STREQUAL "armv7")
         set(NE10_ENABLE_IMGPROC OFF)
