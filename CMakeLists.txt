@@ -33,7 +33,7 @@ option(NE10_BUILD_STATIC "Build NE10 static libraries" ON)
 option(NE10_BUILD_EXAMPLES "Build NE10 examples" OFF)
 
 #hard float abi
-option(NE10_ARM_HARD_FLOAT "Build NE10 for hard float abi" ON)
+option(NE10_ARM_HARD_FLOAT "Build NE10 for hard float abi" OFF)
 
 #unit test options
 option(NE10_BUILD_UNIT_TEST "Build NE10 unit test" OFF)

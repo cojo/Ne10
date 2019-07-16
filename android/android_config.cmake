@@ -129,8 +129,7 @@ else()
 endif()
 
 #TODO: Fine tune pic and pie flag for executable, share library and static library.
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --sysroot=${NDK_SYSROOT_PATH} -pie")
-string(APPEND CMAKE_C_FLAGS " -isysroot ${NDK_ISYSROOT_PATH}")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --sysroot=${NDK_SYSROOT_PATH} -isysroot ${NDK_ISYSROOT_PATH} -fPIC")
 # set(CMAKE_ASM_FLAGS "")
 add_definitions(-D__ANDROID_API__=${ANDROID_API_LEVEL})
 
@@ -149,3 +148,6 @@ if(${NE10_TARGET_ARCH} STREQUAL "armv7")
     # Turn on asm optimization for Android on ARM v7.
     set(NE10_ASM_OPTIMIZATION OFF)
 endif()
+
+message("-- PRE CMAKE_C_FLAGS:
+    ${CMAKE_C_FLAGS}")
