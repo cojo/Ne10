@@ -91,6 +91,8 @@ set(NDK_ISYSROOT_PATH "$ENV{ANDROID_NDK}/sysroot -I$ENV{ANDROID_NDK}/sysroot/usr
 if(APPLE)
     #TODO: Check whether this path is correct for aarch64 under mac.
     set(ANDROID_TOOLCHAIN_PATH "$ENV{ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/bin")
+    set(NDK_SYSROOT_PATH "$ENV{ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/${ANDROID_NDK_TOOLCHAIN_SYSROOT}/${ANDROID_API_LEVEL}/")
+    set(NDK_ISYSROOT_PATH "$ENV{ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -I$ENV{ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/${ANDROID_NDK_TOOLCHAIN_SYSROOT}  -I$ENV{ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/")
 else()
     set(ANDROID_TOOLCHAIN_PATH "$ENV{ANDROID_NDK}/toolchains/llvm/prebuilt/linux-x86_64/bin")
 endif()
